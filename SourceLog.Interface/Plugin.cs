@@ -8,7 +8,7 @@ namespace SourceLog.Interface
 	public class Plugin : IPlugin
 	{
 		protected Timer Timer;
-		protected readonly Object LockObject = new Object();
+		protected readonly object LockObject = new object();
 
 		public string SettingsXml { get; set; }
 

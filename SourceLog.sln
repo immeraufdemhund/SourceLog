@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F3C259E6-9A20-4887-BB15-22714E09DAD5}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
@@ -45,10 +47,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Plugin.Git", "Sou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Plugin.Mercurial", "SourceLog.Plugin.Mercurial\SourceLog.Plugin.Mercurial.csproj", "{33FA32A9-3FE6-4354-A896-1BABCE5D0CB5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{C0641CDD-6F0C-41AE-B89C-750508301346}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{14678258-799D-40F6-A9D9-1E2872A25525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Data", "SourceLog.Data\SourceLog.Data.csproj", "{FB9D0D92-C6AA-4333-A014-50DC9FD36973}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = SourceLog.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -178,11 +183,36 @@ Global
 		{33FA32A9-3FE6-4354-A896-1BABCE5D0CB5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{33FA32A9-3FE6-4354-A896-1BABCE5D0CB5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{33FA32A9-3FE6-4354-A896-1BABCE5D0CB5}.Release|x86.ActiveCfg = Release|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Debug|x86.Build.0 = Debug|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Release|x86.ActiveCfg = Release|Any CPU
+		{FB9D0D92-C6AA-4333-A014-50DC9FD36973}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8ED9B9C-133A-4AF1-9C95-7D0BC93DE2D6} = {C0641CDD-6F0C-41AE-B89C-750508301346}
+		{FA3CF659-D0F2-433A-8EE3-66ADF7CB48E6} = {C0641CDD-6F0C-41AE-B89C-750508301346}
+		{4FBCB5F4-0933-4AE0-B288-B7EDD5103B3D} = {C0641CDD-6F0C-41AE-B89C-750508301346}
+		{41F2B842-1CA5-4403-BDD1-8150FA2C31C8} = {14678258-799D-40F6-A9D9-1E2872A25525}
+		{5A73F5FF-E805-4A5F-A506-87C8E12FEBDA} = {C0641CDD-6F0C-41AE-B89C-750508301346}
+		{619E918E-6259-44F3-B33F-69E7801AC512} = {C0641CDD-6F0C-41AE-B89C-750508301346}
+		{0FE89CBE-432F-4EC5-AB3A-5DB70A6F8786} = {C0641CDD-6F0C-41AE-B89C-750508301346}
+		{33FA32A9-3FE6-4354-A896-1BABCE5D0CB5} = {C0641CDD-6F0C-41AE-B89C-750508301346}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SourceLog.vsmdi
 	EndGlobalSection
 EndGlobal
