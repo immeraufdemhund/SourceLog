@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SourceLog.Interface
+namespace SourceLog.Core.EventArguments
 {
 	public class PluginExceptionEventArgs
 	{

@@ -5,10 +5,11 @@ using System.IO.Compression;
 using System.Windows.Documents;
 using System.Windows.Markup;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
-using SourceLog.Interface;
+using SourceLog.Core;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SourceLog.Core.Models;
 
 namespace SourceLog.Model
 {

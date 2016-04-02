@@ -1,4 +1,4 @@
-﻿using SourceLog.Interface;
+﻿using SourceLog.Core;
 
 namespace SourceLog
 {

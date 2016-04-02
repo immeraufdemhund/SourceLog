@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
-using SourceLog.Interface;
+using SourceLog.Core.Models;
 using System.Data.Entity;
 using System.Linq;
 

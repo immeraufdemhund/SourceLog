@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Model", "SourceLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Plugin.GitHub", "SourceLog.Plugin.GitHub\SourceLog.Plugin.GitHub.csproj", "{D8ED9B9C-133A-4AF1-9C95-7D0BC93DE2D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Interface", "SourceLog.Interface\SourceLog.Interface.csproj", "{3BCDD879-B6F0-447D-B102-A0373933CA05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Core", "SourceLog.Core\SourceLog.Core.csproj", "{3BCDD879-B6F0-447D-B102-A0373933CA05}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceLog.Plugin.Subversion", "SourceLog.Plugin.Subversion\SourceLog.Plugin.Subversion.csproj", "{FA3CF659-D0F2-433A-8EE3-66ADF7CB48E6}"
 EndProject

@@ -3,7 +3,8 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
-using SourceLog.Interface;
+using SourceLog.Core;
+using SourceLog.Core.Models;
 
 namespace SourceLog.Plugin.Perforce
 {

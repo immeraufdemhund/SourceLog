@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using SourceLog.Interface;
+using SourceLog.Core;
+using SourceLog.Core.EventArguments;
+using SourceLog.Core.Models;
 using P4COM;
 using System.IO;
 using System.Reflection;
 
 namespace SourceLog.Plugin.Perforce
 {
-	public class PerforcePlugin : Interface.Plugin
+	public class PerforcePlugin : Core.Plugin
 	{
 		protected override void CheckForNewLogEntriesImpl()
 		{

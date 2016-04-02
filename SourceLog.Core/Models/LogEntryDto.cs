@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SourceLog.Interface
+namespace SourceLog.Core.Models
 {
 	public class LogEntryDto
 	{

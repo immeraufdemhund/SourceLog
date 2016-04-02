@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
-using SourceLog.Interface;
+using SourceLog.Core;
+using SourceLog.Core.EventArguments;
 
 namespace SourceLog.Model
 {

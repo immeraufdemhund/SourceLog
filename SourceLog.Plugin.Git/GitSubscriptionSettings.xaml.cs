@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Xml.Linq;
-using SourceLog.Interface;
+using SourceLog.Core;
 using WinForms = System.Windows.Forms;
 
 namespace SourceLog.Plugin.Git

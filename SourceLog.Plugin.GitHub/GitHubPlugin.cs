@@ -7,11 +7,13 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Newtonsoft.Json;
-using SourceLog.Interface;
+using SourceLog.Core;
+using SourceLog.Core.Models;
+using SourceLog.Core.EventArguments;
 
 namespace SourceLog.Plugin.GitHub
 {
-	public class GitHubPlugin : Interface.Plugin
+	public class GitHubPlugin : Core.Plugin
 	{
 		private string _username;
 		private string _reponame;

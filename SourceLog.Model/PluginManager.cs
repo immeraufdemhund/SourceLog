@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Controls;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
-using SourceLog.Interface;
+using SourceLog.Core;
 
 namespace SourceLog.Model
 {

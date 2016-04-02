@@ -80,9 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SourceLog.Interface\SourceLog.Interface.csproj">
+    <ProjectReference Include="..\SourceLog.Core\SourceLog.Core.csproj">
       <Project>{3BCDD879-B6F0-447D-B102-A0373933CA05}</Project>
-      <Name>SourceLog.Interface</Name>
+      <Name>SourceLog.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

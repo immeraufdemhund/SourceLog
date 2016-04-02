@@ -8,11 +8,13 @@ using System.Linq;
 using System.Threading;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using SharpSvn;
-using SourceLog.Interface;
+using SourceLog.Core;
+using SourceLog.Core.EventArguments;
+using SourceLog.Core.Models;
 
 namespace SourceLog.Plugin.Subversion
 {
-	public class SubversionPlugin : Interface.Plugin
+	public class SubversionPlugin : Core.Plugin
 	{
 		// Need a static lock object as SharpSVN is not thread-safe
 		static readonly new Object LockObject = new Object();

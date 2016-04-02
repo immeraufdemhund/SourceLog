@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 using Mercurial;
 using Microsoft.Win32;
-using SourceLog.Interface;
+using SourceLog.Core;
+using SourceLog.Core.EventArguments;
+using SourceLog.Core.Models;
 
 namespace SourceLog.Plugin.Mercurial
 {
-	public class MercurialPlugin : Interface.Plugin
-	{
-		protected override void CheckForNewLogEntriesImpl()
-		{
-			string directory;			
+    public class MercurialPlugin : Core.Plugin
+    {
+        protected override void CheckForNewLogEntriesImpl()
+        {
+            string directory;			
             GetMercurialSettings(out directory);
 
             if (!Client.CouldLocateClient)
@@ -34,82 +33,82 @@ namespace SourceLog.Plugin.Mercurial
             {
                     ProcessLogEntry(repo, commit);                    
             }
-		}
+        }
 
-		private void ProcessLogEntry(Repository repo, Changeset commit)
-		{
-			var logEntryDto = new LogEntryDto
-				{
-					Revision = commit.RevisionNumber.ToString(),
-					Author = commit.AuthorName,
-					CommittedDate = commit.Timestamp,
-					Message = "("+commit.Branch + ") " +  commit.CommitMessage,
-					ChangedFiles = new List<ChangedFileDto>()
-				};
+        private void ProcessLogEntry(Repository repo, Changeset commit)
+        {
+            var logEntryDto = new LogEntryDto
+                {
+                    Revision = commit.RevisionNumber.ToString(),
+                    Author = commit.AuthorName,
+                    CommittedDate = commit.Timestamp,
+                    Message = "("+commit.Branch + ") " +  commit.CommitMessage,
+                    ChangedFiles = new List<ChangedFileDto>()
+                };
 
             
 
-			foreach (ChangesetPathAction change in commit.PathActions)
-			{				
-				var changeFileDto = new ChangedFileDto
-					{
-						FileName = change.Path,
-						ChangeType = MercurialChangeStatusToChangeType(change.Action)
-					};
+            foreach (ChangesetPathAction change in commit.PathActions)
+            {				
+                var changeFileDto = new ChangedFileDto
+                    {
+                        FileName = change.Path,
+                        ChangeType = MercurialChangeStatusToChangeType(change.Action)
+                    };
                 
 
 
-				switch (changeFileDto.ChangeType)
-				{
-					case ChangeType.Added:
-						changeFileDto.OldVersion = new byte[0];
+                switch (changeFileDto.ChangeType)
+                {
+                    case ChangeType.Added:
+                        changeFileDto.OldVersion = new byte[0];
                         changeFileDto.NewVersion = GetFile(repo, commit.RevisionNumber, change.Path);
-						break;
-					case ChangeType.Deleted:
+                        break;
+                    case ChangeType.Deleted:
                         changeFileDto.OldVersion = GetFile(repo, commit.LeftParentRevision, change.Path);
-						changeFileDto.NewVersion = new byte[0];
-						break;
-					default:
+                        changeFileDto.NewVersion = new byte[0];
+                        break;
+                    default:
                         changeFileDto.OldVersion = GetFile(repo, commit.LeftParentRevision, change.Path);
                         changeFileDto.NewVersion = GetFile(repo, commit.RevisionNumber, change.Path);
-						break;
-				}
+                        break;
+                }
 
-				logEntryDto.ChangedFiles.Add(changeFileDto);
-			}
+                logEntryDto.ChangedFiles.Add(changeFileDto);
+            }
 
-			var args = new NewLogEntryEventArgs { LogEntry = logEntryDto };
-			OnNewLogEntry(args);
-			MaxDateTimeRetrieved = logEntryDto.CommittedDate;
-		}
+            var args = new NewLogEntryEventArgs { LogEntry = logEntryDto };
+            OnNewLogEntry(args);
+            MaxDateTimeRetrieved = logEntryDto.CommittedDate;
+        }
 
-		private void GetMercurialSettings(out string directory)
-		{
-			var settingsXml = XDocument.Parse(SettingsXml);
-			// ReSharper disable PossibleNullReferenceException
-			directory = settingsXml.Root.Element("Directory").Value;
-			// ReSharper restore PossibleNullReferenceException
-		}
+        private void GetMercurialSettings(out string directory)
+        {
+            var settingsXml = XDocument.Parse(SettingsXml);
+            // ReSharper disable PossibleNullReferenceException
+            directory = settingsXml.Root.Element("Directory").Value;
+            // ReSharper restore PossibleNullReferenceException
+        }
 
         private static byte[] GetFile(Repository repo, int rev, string path)
-		{
+        {
             string file = repo.Cat(path,(new CatCommand()).WithAdditionalArgument("-r "+rev));
             return System.Text.Encoding.UTF8.GetBytes(file);
-		}        
+        }        
         
         private static ChangeType MercurialChangeStatusToChangeType(ChangesetPathActionType changeKind)
-		{
-			switch (changeKind)
-			{
+        {
+            switch (changeKind)
+            {
                 case ChangesetPathActionType.Add:
-					return ChangeType.Added;
+                    return ChangeType.Added;
                 case ChangesetPathActionType.Remove:
-					return ChangeType.Deleted;
+                    return ChangeType.Deleted;
                 case ChangesetPathActionType.Modify:
-					return ChangeType.Modified;
-				default:
-					return ChangeType.Modified;
-			}
-		}
-	}
+                    return ChangeType.Modified;
+                default:
+                    return ChangeType.Modified;
+            }
+        }
+    }
 }

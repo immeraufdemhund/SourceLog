@@ -1,4 +1,4 @@
-﻿namespace SourceLog.Interface
+﻿namespace SourceLog.Core
 {
     public enum ChangeType
     {

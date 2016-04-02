@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using SourceLog.Interface;
+using SourceLog.Core;
 using SourceLog.Model;
 using SourceLog.ViewModel;
 

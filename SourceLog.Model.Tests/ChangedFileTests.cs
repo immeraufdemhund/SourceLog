@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 //using Moq;
-using SourceLog.Interface;
+using SourceLog.Core.Models;
 
 namespace SourceLog.Model.Tests
 {

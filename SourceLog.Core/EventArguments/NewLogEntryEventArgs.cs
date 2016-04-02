@@ -1,6 +1,7 @@
 ﻿using System;
+using SourceLog.Core.Models;
 
-namespace SourceLog.Interface
+namespace SourceLog.Core.EventArguments
 {
 	public class NewLogEntryEventArgs : EventArgs
 	{
