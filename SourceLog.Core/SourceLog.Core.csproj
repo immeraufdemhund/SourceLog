@@ -71,6 +71,7 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Delegates.cs" />
+    <Compile Include="EventArguments\NewLogEntryInfoEventHandlerArgs.cs" />
     <Compile Include="Models\ChangedFileDto.cs" />
     <Compile Include="ChangeType.cs" />
     <Compile Include="Extensions.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="ISubscriptionSettings.cs" />
     <Compile Include="EventArguments\PluginExceptionEventArgs.cs" />
     <Compile Include="EventArguments\NewLogEntryEventArgs.cs" />
+    <Compile Include="Models\LogSubscriptionDto.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

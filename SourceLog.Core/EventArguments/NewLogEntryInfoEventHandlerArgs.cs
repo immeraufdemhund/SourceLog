@@ -1,4 +1,4 @@
-﻿namespace SourceLog.Model
+﻿namespace SourceLog.Core.EventArguments
 {
 	public class NewLogEntryInfoEventHandlerArgs
 	{

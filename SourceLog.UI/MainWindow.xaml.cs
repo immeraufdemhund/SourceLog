@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using SourceLog.Model;
 using SourceLog.ViewModel;
+using SourceLog.Core.EventArguments;
 
 namespace SourceLog
 {

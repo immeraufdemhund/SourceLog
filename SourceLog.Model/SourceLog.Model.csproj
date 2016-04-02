@@ -82,8 +82,6 @@
     </Compile>
     <Compile Include="ChangedFile.cs" />
     <Compile Include="ISourceLogContext.cs" />
-    <Compile Include="NewLogEntryInfoEventHandler.cs" />
-    <Compile Include="NewLogEntryInfoEventHandlerArgs.cs" />
     <Compile Include="SourceLogContext.cs" />
     <Compile Include="LogEntry.cs" />
     <Compile Include="PluginManager.cs" />

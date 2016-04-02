@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using SourceLog.Model;
+using SourceLog.Core;
 
 namespace SourceLog.ViewModel
 {

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using SourceLog.Core;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
