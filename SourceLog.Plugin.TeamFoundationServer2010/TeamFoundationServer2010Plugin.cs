@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
 using SourceLog.Core.EventArguments;
 using SourceLog.Core.Models;
 using Microsoft.TeamFoundation.Client;
@@ -45,7 +44,7 @@ namespace SourceLog.Plugin.TeamFoundationServer2010
                 history.Where(c => c.CreationDate > MaxDateTimeRetrieved).OrderBy(c => c.CreationDate))
             {
                 var changesetId = changeset.ChangesetId;
-                Logger.Write(new LogEntry { Message = "Creating LogEntry for Changeset " + changesetId, Categories = { "Plugin.TFS2010" } });
+                SourceLogLogger.LogInformation("Creating LogEntry for Changeset " + changesetId, "Plugin.TFS2010");
 
                 var logEntry = new LogEntryDto
                 {

@@ -4,7 +4,6 @@ using System.IO;
 using System.IO.Compression;
 using System.Windows.Documents;
 using System.Windows.Markup;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
 using SourceLog.Core;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
@@ -153,11 +152,7 @@ namespace SourceLog.Model
             }
             catch (Exception exception)
             {
-                Logger.Write(new Microsoft.Practices.EnterpriseLibrary.Logging.LogEntry
-                    {
-                        Message = "Error deserialising FlowDocument: " + exception,
-                        Severity = TraceEventType.Error
-                    });
+                SourceLogLogger.LogError("Error deserialising FlowDocument: " + exception);
                 flowDocument = new FlowDocument();
             }
             return flowDocument;

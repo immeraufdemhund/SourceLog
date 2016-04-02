@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
 using SourceLog.Core.EventArguments;
 
 namespace SourceLog.Core
@@ -16,12 +15,7 @@ namespace SourceLog.Core
         public DateTime MaxDateTimeRetrieved { get; set; }
         public virtual void Initialise()
         {
-            Logger.Write(new LogEntry
-            {
-                Message = "Plugin initialising",
-                Categories = { "Plugin." + GetType().Name },
-                Severity = TraceEventType.Information
-            });
+            SourceLogLogger.LogInformation("Plugin initialising","Plugin." + GetType().Name);
 
             Timer = new Timer(CheckForNewLogEntries);
             Timer.Change(0, 15000);
@@ -33,11 +27,7 @@ namespace SourceLog.Core
             {
                 try
                 {
-                    Logger.Write(new LogEntry
-                    {
-                        Message = "Checking for new entries",
-                        Categories = { "Plugin." + GetType().Name }
-                    });
+                    SourceLogLogger.LogInformation("Checking for new entries","Plugin." + GetType().Name);
                     CheckForNewLogEntriesImpl();
                 }
                 catch (Exception ex)
