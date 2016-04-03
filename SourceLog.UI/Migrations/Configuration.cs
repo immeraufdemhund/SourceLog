@@ -1,12 +1,9 @@
 namespace SourceLog.Migrations
 {
-	using System;
-	using System.Data.Entity;
-	using System.Data.Entity.Migrations;
-	using System.Linq;
-using SourceLog.Model;
+    using System.Data.Entity.Migrations;
+    using SourceLog.Model;
 
-	internal sealed class Configuration : DbMigrationsConfiguration<SourceLogContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SourceLogContext>
 	{
 		public Configuration()
 		{

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using SourceLog.Core;
 using WinForms = System.Windows.Forms;
 
 namespace SourceLog.Plugin.Git
 {
-	/// <summary>
-	/// Interaction logic for GitSubscriptionSettings.xaml
-	/// </summary>
-	public partial class GitSubscriptionSettings : ISubscriptionSettings
+    /// <summary>
+    /// Interaction logic for GitSubscriptionSettings.xaml
+    /// </summary>
+    public partial class GitSubscriptionSettings : ISubscriptionSettings
 	{
 		public GitSubscriptionSettings()
 		{

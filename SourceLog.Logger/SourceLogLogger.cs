@@ -1,6 +1,5 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Logging;
 using System.Diagnostics;
-using System;
 
 namespace SourceLog
 {

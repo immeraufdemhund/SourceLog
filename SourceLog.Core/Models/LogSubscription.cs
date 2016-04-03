@@ -1,6 +1,6 @@
 ﻿namespace SourceLog.Core.Models
 {
-    public class LogSubscriptionDto
+    public class LogSubscription
     {
         public int LogSubscriptionId { get; set; }
         public string Name { get; set; }

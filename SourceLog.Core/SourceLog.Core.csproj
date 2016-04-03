@@ -57,7 +57,7 @@
     <Compile Include="ISubscriptionSettings.cs" />
     <Compile Include="EventArguments\PluginExceptionEventArgs.cs" />
     <Compile Include="EventArguments\NewLogEntryEventArgs.cs" />
-    <Compile Include="Models\LogSubscriptionDto.cs" />
+    <Compile Include="Models\LogSubscription.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

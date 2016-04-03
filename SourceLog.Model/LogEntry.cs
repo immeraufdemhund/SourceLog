@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using SourceLog.Core.Models;
 using System.Data.Entity;
